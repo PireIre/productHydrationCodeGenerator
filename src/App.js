@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductSetupLayout from "./ProductSetupLayout.js"
+
+const warningOnPageReload = () => {
+  window.onbeforeunload = function() {
+    return "Are you sure?";
+  };
+  
+  window.onkeydown = function(event) {
+    if (event.keyCode === 116) {
+      window.location.reload();
+    }
+  };
+}
 
 function App() {
+  warningOnPageReload()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProductSetupLayout />
     </div>
   );
 }
