@@ -120,6 +120,8 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
           <option value="USD">USD</option>
           <option value="SEK">SEK</option>
           <option value="GBP">GBP</option>
+          <option value="INR">INR</option>
+          <option value="EUR">EUR</option>
         </Form.Select>
       </Form.Group>
 
@@ -132,6 +134,8 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
           <option value="Red">Red</option>
           <option value="Gold">Gold</option>
           <option value="Silver">Silver</option>
+          <option value="Brown">Brown</option>
+          <option value="Orange">Orange</option>
         </Form.Select>
 
       </Form.Group>
@@ -169,6 +173,8 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
             <option value="L">L</option>
             <option value="10">10</option>
             <option value="12">12</option>
+            <option value="30ml">30ml</option>
+            <option value="50ml">50ml</option>
           </Form.Select>
         </Form.Group>
 
@@ -179,6 +185,8 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
             <option value="L">L</option>
             <option value="10">10</option>
             <option value="12">12</option>
+            <option value="30ml">30ml</option>
+            <option value="50ml">50ml</option>
           </Form.Select>
         </Form.Group>
       </div>
@@ -192,6 +200,8 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
           <option value="Red">Red</option>
           <option value="Gold">Gold</option>
           <option value="Silver">Silver</option>
+          <option value="Brown">Brown</option>
+          <option value="Orange">Orange</option>
         </Form.Select>
 
       </Form.Group>
@@ -230,6 +240,8 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
             <option value="L">L</option>
             <option value="10">10</option>
             <option value="12">12</option>
+            <option value="30ml">30ml</option>
+            <option value="50ml">50ml</option>
           </Form.Select>
         </Form.Group>
 
@@ -240,6 +252,8 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
             <option value="L">L</option>
             <option value="10">10</option>
             <option value="12">12</option>
+            <option value="30ml">30ml</option>
+            <option value="50ml">50ml</option>
           </Form.Select>
         </Form.Group>
       </div>
