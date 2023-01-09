@@ -153,15 +153,15 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
         <Form.Group className="mb-3" controlId="productName">
           <Form.Label>First Variant Image URLS</Form.Label>
           <Row>
-            <Col xs={9} ><Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[0] : ""} placeholder="First product image URL" /></Col>
+            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[0] : ""} placeholder="First product image URL" /></Col>
             <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[0].images[0] : ""}></img></Col>
           </Row>
           <Row>
-            <Col xs={9} ><Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[1] : ""} placeholder="Second product image URL" /></Col>
+            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[1] : ""} placeholder="Second product image URL" /></Col>
             <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[0].images[1] : ""}></img></Col>
           </Row>
           <Row>
-            <Col xs={9} ><Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[2] : ""} placeholder="Third product image URL" /></Col>
+            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[2] : ""} placeholder="Third product image URL" /></Col>
             <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[0].images[2] : ""}></img></Col>
           </Row>
         </Form.Group>
@@ -220,15 +220,15 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
         <Form.Group className="mb-3" controlId="productName">
           <Form.Label>First Variant Image URLS</Form.Label>
           <Row>
-            <Col xs={9} ><Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[0] : ""} placeholder="First product image URL" /></Col>
+            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[0] : ""} placeholder="First product image URL" /></Col>
             <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[1].images[0] : ""}></img></Col>
           </Row>
           <Row>
-            <Col xs={9} ><Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[1] : ""} placeholder="Second product image URL" /></Col>
+            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[1] : ""} placeholder="Second product image URL" /></Col>
             <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[1].images[1] : ""}></img></Col>
           </Row>
           <Row>
-            <Col xs={9} ><Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[2] : ""} placeholder="Second product image URL" /></Col>
+            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[2] : ""} placeholder="Second product image URL" /></Col>
             <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[1].images[2] : ""}></img></Col>
           </Row>
         </Form.Group>
