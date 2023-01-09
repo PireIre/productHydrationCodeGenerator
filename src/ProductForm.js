@@ -106,12 +106,12 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
 
       <Form.Group className="mb-3" >
         <Form.Label>Price</Form.Label>
-        <Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.price : ""} placeholder="Enter product price" />
+        <Form.Control type="number" required defaultValue={productWeWantToEdit ? productWeWantToEdit.price : ""} placeholder="Enter product price" />
       </Form.Group>
 
       <Form.Group className="mb-3" >
         <Form.Label>Discounted Price</Form.Label>
-        <Form.Control required defaultValue={productWeWantToEdit ? productWeWantToEdit.discountedPrice : ""} placeholder="Enter discounted price" />
+        <Form.Control type="number" required defaultValue={productWeWantToEdit ? productWeWantToEdit.discountedPrice : ""} placeholder="Enter discounted price" />
       </Form.Group>
 
       <Form.Group className="mb-3" >
