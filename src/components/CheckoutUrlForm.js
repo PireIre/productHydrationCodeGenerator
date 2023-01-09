@@ -13,7 +13,7 @@ function CheckoutUrlForm({ checkoutUrl, setCheckoutUrl, setCheckoutUrlCanva }) {
     <Form onSubmit={handleSubmit} >
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Checkout URL</Form.Label>
-        <Form.Control defaultValue={checkoutUrl ? checkoutUrl : ""} required placeholder="Enter Checkout URL" />
+        <Form.Control type="url" defaultValue={checkoutUrl ? checkoutUrl : ""} required placeholder="Enter Checkout URL" />
         <Form.Text className="text-muted">
           This is the checkout URL of the page you will demo the product on (make sure it is same locale)
         </Form.Text>
