@@ -31,3 +31,7 @@ code {
 .subform {
   margin-left: 100px;
 }
+
+.form-check.form-switch {
+  font-size: 18px;
+}

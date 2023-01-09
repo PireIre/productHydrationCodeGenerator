@@ -1,6 +1,17 @@
 import { CopyBlock, dracula } from "react-code-blocks";
+import Form from 'react-bootstrap/Form';
+import { useState } from 'react';
 
 function GeneratedCode( {productInfo, showId, checkoutUrl } ) {
+
+  const [miniplayerSetting, setMiniplayerSetting] = useState("MINIMIZE")
+
+  const handleMiniplayerSetting = (e) => {
+    if (!e.target.checked) {
+      setMiniplayerSetting("CLOSE")
+    } else { setMiniplayerSetting("MINIMIZE")
+  }
+   }
   
   function toObject(arr) {
     var rv = {};
@@ -34,8 +45,8 @@ function GeneratedCode( {productInfo, showId, checkoutUrl } ) {
     
         locale: 'en-US',
         buttons: {
-          dismiss: player.BUTTON.MINIMIZE, 
-          checkout: player.BUTTON.MINIMIZE
+          dismiss: player.BUTTON.${miniplayerSetting}, 
+          checkout: player.BUTTON.${miniplayerSetting}
         }
       });
       player.on(player.EVENT.PROVIDE_PRODUCT_DATA, (event) => {
@@ -160,12 +171,24 @@ function GeneratedCode( {productInfo, showId, checkoutUrl } ) {
     })();`
     
   return (
+    <>
+    <Form>
+      <Form.Check size="lg"
+        onChange={handleMiniplayerSetting}
+        defaultChecked
+        type="switch"
+        id="custom-switch"
+        label="Add Miniplayer"
+      />
+    </Form>
+    <br/>
     <CopyBlock
       text= {productCode}
       language="javascript"
       showLineNumbers={false}
       theme={dracula} 
     />
+    </>
   );
 }
 
