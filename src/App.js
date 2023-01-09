@@ -1,5 +1,5 @@
 import './App.css';
-import ProductSetupLayout from "./ProductSetupLayout.js"
+import ProductSetupLayout from "./components/ProductSetupLayout.js"
 
 const warningOnPageReload = () => {
   window.onbeforeunload = function() {

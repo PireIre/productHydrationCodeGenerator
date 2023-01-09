@@ -3,9 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import currencyCodes from "./lists/currencyCodes.json"
-import variations from "./lists/variations.json"
-import sizes from "./lists/sizes.json"
+import currencyCodes from "../lists/currencyCodes.json"
+import variations from "../lists/variations.json"
+import sizes from "../lists/sizes.json"
 
 
 
