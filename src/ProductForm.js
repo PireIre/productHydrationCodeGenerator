@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import currencyCodes from "./lists/currencyCodes.json"
+import variations from "./lists/variations.json"
+import sizes from "./lists/sizes.json"
+
+
+
 
 function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductSetupEditCanva, update, productWeWantToEdit }) {
-
 
   const handleSubmit = (e) => {
     if (update) {
@@ -117,25 +122,14 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
       <Form.Group className="mb-3" >
         <Form.Label>Currency</Form.Label>
         <Form.Select defaultValue={productWeWantToEdit ? productWeWantToEdit.currency : "USD"}>
-          <option value="USD">USD</option>
-          <option value="SEK">SEK</option>
-          <option value="GBP">GBP</option>
-          <option value="INR">INR</option>
-          <option value="EUR">EUR</option>
+          {currencyCodes.map(curencyCode => <option value={curencyCode.code} >{curencyCode.name}</option>)}
         </Form.Select>
       </Form.Group>
 
       <Form.Group className="mb-3" >
         <Form.Label>1. First Variant</Form.Label>
         <Form.Select defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].name : "Black"}>
-          <option value="Black">Black</option>
-          <option value="White">White</option>
-          <option value="Blue">Blue</option>
-          <option value="Red">Red</option>
-          <option value="Gold">Gold</option>
-          <option value="Silver">Silver</option>
-          <option value="Brown">Brown</option>
-          <option value="Orange">Orange</option>
+          {variations.map(variation => <option value={variation}>{variation}</option>)}
         </Form.Select>
 
       </Form.Group>
@@ -169,24 +163,14 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
         <Form.Group className="mb-3">
           <Form.Label>First Size</Form.Label>
           <Form.Select defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].sizes[0].name : "XL"}>
-            <option value="XL">XL</option>
-            <option value="L">L</option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="30ml">30ml</option>
-            <option value="50ml">50ml</option>
+            {sizes.map(size => <option value={size}>{size}</option>)}
           </Form.Select>
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Second Size</Form.Label>
           <Form.Select defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].sizes[1].name : "L"}>
-            <option value="XL">XL</option>
-            <option value="L">L</option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="30ml">30ml</option>
-            <option value="50ml">50ml</option>
+            {sizes.map(size => <option value={size}>{size}</option>)}
           </Form.Select>
         </Form.Group>
       </div>
@@ -194,14 +178,7 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
       <Form.Group className="mb-3" >
         <Form.Label>2. Second Variant</Form.Label>
         <Form.Select defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].name : "White"}>
-          <option value="Black">Black</option>
-          <option value="White">White</option>
-          <option value="Blue">Blue</option>
-          <option value="Red">Red</option>
-          <option value="Gold">Gold</option>
-          <option value="Silver">Silver</option>
-          <option value="Brown">Brown</option>
-          <option value="Orange">Orange</option>
+          {variations.map(variation => <option value={variation}>{variation}</option>)}
         </Form.Select>
 
       </Form.Group>
@@ -236,24 +213,14 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
         <Form.Group className="mb-3">
           <Form.Label>First Size</Form.Label>
           <Form.Select defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].sizes[0].name : "XL"}>
-            <option value="XL">XL</option>
-            <option value="L">L</option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="30ml">30ml</option>
-            <option value="50ml">50ml</option>
+            {sizes.map(size => <option value={size}>{size}</option>)}
           </Form.Select>
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Second Size (Out of Stock)</Form.Label>
           <Form.Select defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].sizes[1].name : "L"}>
-            <option value="XL">XL</option>
-            <option value="L">L</option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="30ml">30ml</option>
-            <option value="50ml">50ml</option>
+            {sizes.map(size => <option value={size}>{size}</option>)}
           </Form.Select>
         </Form.Group>
       </div>
