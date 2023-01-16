@@ -23,6 +23,9 @@ function ProductSetupLayout() {
   const [productInfo, setProductInfo] = useState([])
   const [editedProduct, setEditedProduct] = useState("")
 
+  const [variationImages, setVariationImages] = useState([{ "id": 0, "url": "" }, { "id": 1, "url": "" }, { "id": 2, "url": "" }]);
+  const [variationImages1, setVariationImages1] = useState([{ "id": 0, "url": "" }, { "id": 1, "url": "" }, { "id": 2, "url": "" }]);
+
   // ADD PRODUCT CANVA
   const handleCloseProductSetup = () => setShowProductSetupCanva(false);
   const handleShowProductSetup = () => setShowProductSetupCanva(true);
@@ -128,7 +131,15 @@ function ProductSetupLayout() {
           <Offcanvas.Title>Product setup</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ProductForm setProductInfo={setProductInfo} setShowProductSetupCanva={setShowProductSetupCanva} setShowProductSetupEditCanva={setShowProductSetupEditCanva} />
+          <ProductForm 
+          setProductInfo={setProductInfo} 
+          setShowProductSetupCanva={setShowProductSetupCanva} 
+          setShowProductSetupEditCanva={setShowProductSetupEditCanva}
+          setVariationImages={setVariationImages}
+          variationImages={variationImages}
+          setVariationImages1={setVariationImages1}
+          variationImages1={variationImages1}
+          />
         </Offcanvas.Body>
       </Offcanvas>
 
@@ -148,7 +159,15 @@ function ProductSetupLayout() {
           <Offcanvas.Title>Update Product</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ProductForm productWeWantToEdit={productWeWantToEdit()} setProductInfo={setProductInfo} setShowProductSetupEditCanva={setShowProductSetupEditCanva} update={true} />
+          <ProductForm 
+            productWeWantToEdit={productWeWantToEdit()} 
+            setProductInfo={setProductInfo} 
+            setShowProductSetupEditCanva={setShowProductSetupEditCanva} 
+            setVariationImages={setVariationImages}
+            variationImages={variationImages}
+            setVariationImages1={setVariationImages1}
+            variationImages1={variationImages1}
+            update={true} />
         </Offcanvas.Body>
       </Offcanvas>
 

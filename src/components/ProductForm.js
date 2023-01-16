@@ -8,9 +8,16 @@ import variations from "../lists/variations.json"
 import sizes from "../lists/sizes.json"
 
 
+function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductSetupEditCanva, update, productWeWantToEdit, setVariationImages, setVariationImages1,
+  variationImages, variationImages1 }) {
+    
+  const handleVariationImages = e => {
+    setVariationImages(variationImages.map(image => (image.id == e.target.name) ? { ...image, url: e.target.value } : { ...image }))
+  }
 
-
-function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductSetupEditCanva, update, productWeWantToEdit }) {
+  const handleVariationImages1 = e => {
+    setVariationImages1(variationImages1.map(image => (image.id == e.target.name) ? { ...image, url: e.target.value } : { ...image }))
+  }
 
   const handleSubmit = (e) => {
     if (update) {
@@ -146,18 +153,14 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
 
         <Form.Group className="mb-3" controlId="productName">
           <Form.Label>First Variant Image URLS</Form.Label>
-          <Row>
-            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[0] : ""} placeholder="First product image URL" /></Col>
-            <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[0].images[0] : ""}></img></Col>
-          </Row>
-          <Row>
-            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[1] : ""} placeholder="Second product image URL" /></Col>
-            <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[0].images[1] : ""}></img></Col>
-          </Row>
-          <Row>
-            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[0].images[2] : ""} placeholder="Third product image URL" /></Col>
-            <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[0].images[2] : ""}></img></Col>
-          </Row>
+
+          {variationImages.map(image => {
+            return <Row>
+              <Col xs={9} ><Form.Control name={image.id} onChange={handleVariationImages} type="url" required defaultValue={variationImages[`${image.id}`].url} placeholder="First product image URL" /></Col>
+              <Col><img style={{ width: '2rem' }} src={variationImages[`${image.id}`].url}></img></Col>
+            </Row>
+          })}
+
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -196,18 +199,12 @@ function ProductForm({ setProductInfo, setShowProductSetupCanva, setShowProductS
 
         <Form.Group className="mb-3" controlId="productName">
           <Form.Label>First Variant Image URLS</Form.Label>
-          <Row>
-            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[0] : ""} placeholder="First product image URL" /></Col>
-            <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[1].images[0] : ""}></img></Col>
-          </Row>
-          <Row>
-            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[1] : ""} placeholder="Second product image URL" /></Col>
-            <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[1].images[1] : ""}></img></Col>
-          </Row>
-          <Row>
-            <Col xs={9} ><Form.Control type="url" required defaultValue={productWeWantToEdit ? productWeWantToEdit.colors[1].images[2] : ""} placeholder="Second product image URL" /></Col>
-            <Col><img style={{ width: '2rem' }} src={productWeWantToEdit ? productWeWantToEdit.colors[1].images[2] : ""}></img></Col>
-          </Row>
+          {variationImages1.map(image => {
+            return <Row>
+              <Col xs={9} ><Form.Control name={image.id} onChange={handleVariationImages1} type="url" required defaultValue={variationImages1[`${image.id}`].url} placeholder="First product image URL" /></Col>
+              <Col><img style={{ width: '2rem' }} src={variationImages1[`${image.id}`].url}></img></Col>
+            </Row>
+          })}
         </Form.Group>
 
         <Form.Group className="mb-3">
